@@ -112,10 +112,9 @@ get请求
 
 ### 重点说明
 
->express-mock-doc 输出一个函数mock，传入两个参数，一个是express对象，另一个是指定的路由列表格式如下：
+express-mock-doc 输出一个函数mock，传入两个参数，一个是express对象，另一个是指定的路由列表格式如下：
 
 ```js
-
 var apiList={
   url:{ //路由支持exoress的router API的所有路由规则，如：“/getname”、“/getnameById/:id”、“/getnameById?id=12”
     eq:"",//示例路径，如果我们将url写成“/getnameById/:id”格式那么就必须包含eq参数，并且将其携程如“/getnameById/12”否则会出错。
@@ -125,13 +124,11 @@ var apiList={
   }
 }
 module.exports = apiList;
-
 ```
-##感谢
+
+### 感谢
 
 [楼教主](https://github.com/52cik)
-
-
 
 [license-url]: https://opensource.org/licenses/MIT
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg
