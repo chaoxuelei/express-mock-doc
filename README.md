@@ -91,7 +91,15 @@ $ nodemon app.js
 
 ```
 
-> 然后你可以访问 <http://localhost:3000/> 查看API文档。
+然后你可以访问 <http://localhost:3000/> 查看API文档。
+
+上图：
+
+![微信截图_20190522204102.png](https://i.loli.net/2019/05/22/5ce54854daa6f21914.png)
+
+get请求
+![微信截图_20190522203922.png](https://i.loli.net/2019/05/22/5ce54854e84f094641.png)
+
 
 **推荐使用 [nodemon][nodemon] 监视自动重启服务**
 
@@ -103,8 +111,11 @@ $ nodemon app.js
 * [Mock 例子](http://mockjs-lite.js.org/docs/examples.html)  
 
 ### 重点说明
+
 >express-mock-doc 输出一个函数mock，传入两个参数，一个是express对象，另一个是指定的路由列表格式如下：
+
 ```js
+
 var apiList={
   url:{ //路由支持exoress的router API的所有路由规则，如：“/getname”、“/getnameById/:id”、“/getnameById?id=12”
     eq:"",//示例路径，如果我们将url写成“/getnameById/:id”格式那么就必须包含eq参数，并且将其携程如“/getnameById/12”否则会出错。
@@ -114,15 +125,16 @@ var apiList={
   }
 }
 module.exports = apiList;
+
 ```
+[楼教主](https://github.com/52cik)
+
+##感谢
+
 [license-url]: https://opensource.org/licenses/MIT
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg
-
 [npm-url]: https://www.npmjs.com/package/express-mock-doc
 [npm-image]: https://img.shields.io/badge/npm-express--mock--doc-brightgreen.svg
-
 [node-url]: https://nodejs.org
 [node-image]: https://img.shields.io/badge/node-%3E%3D%200.10.0-brightgreen.svg
-
-
 [nodemon]: https://nodemon.io
