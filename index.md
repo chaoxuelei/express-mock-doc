@@ -33,7 +33,7 @@ const app = express();
       app.listen(3001)
 ```
 
-2. 在 `api-server` 下创建 `mocks` 目录，然后创建 `api.js` 内容如下:
+2. 在 `mock-server` 下创建 `mocks` 目录，然后创建 `api.js` 内容如下:
 
 ```js
 var list = {
@@ -127,9 +127,11 @@ var apiList={
 module.exports = apiList;
 
 ```
+##感谢
+
 [楼教主](https://github.com/52cik)
 
-##感谢
+
 
 [license-url]: https://opensource.org/licenses/MIT
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg
