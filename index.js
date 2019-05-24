@@ -4,35 +4,31 @@ var path = require('path'),
     Random = Mock.Random;
     function mock(express,routerList){
         var router = express.Router();
-            if(!routerList && typeof(routerList) != "Array") return console.warn('router is not null and must is array');
-                router.get('/',function(req,res,next){
-                    let menuList = new Array();
-                    for(index in routerList){
-                        routerList[index].url = index;
-                        menuList.push(routerList[index]);
-                    };
-                    let template = fs.readFileSync(path.join(__dirname, 'doc.html'), 'utf8');
-                    return res.end(template.replace('@menuList', JSON.stringify(routerList))); 
-                });
+            if(!routerList) return console.warn('express-moc-doc:      router is not null');
+            router.get('/',function(req,res,next){
+                let menuList = new Array();
+                for(index in routerList){
+                    routerList[index].url = index;
+                    menuList.push(routerList[index]);
+                };
+                let template = fs.readFileSync(path.join(__dirname, 'doc.html'), 'utf8');
+                return res.end(template.replace('@menuList', JSON.stringify(menuList))); 
+            });
             for(index in routerList){
                 let method = routerList[index].type,
                     data = routerList[index].data;
-                router[method](index,(req,res,next) =>{
-                    res.set('Access-Control-Allow-Origin', '*');
-                    res.set('Access-Control-Allow-Methods', 'GET,HEAD,PUT,POST,DELETE,PATCH');
-                    if (req.headers['access-control-request-headers']) {
-                        res.set('Access-Control-Allow-Headers', allowedHeaders);
-                    };
+                    router[method](index,(req,res,next) =>{
                     if (req.method === 'OPTIONS') {
                         return res.send('');
                     };
-                    
                     if (data) {
+                        // transfer data,avoid return pollute
+                        let _data = data;
                         if (typeof data === 'function') {
                             data = data(req, Mock, Random);
                         }
-                        console.log(data)
                         res.json(Mock.mock(data))
+                        data = _data;
                     } else {
                         next();
                     }
