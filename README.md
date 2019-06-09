@@ -33,7 +33,7 @@ const app = express();
       app.listen(3001)
 ```
 
-2. 在 `api-server` 下创建 `mocks` 目录，然后创建 `api.js` 内容如下:
+2. 在 `mock-server` 下创建 `mocks` 目录，然后创建 `api.js` 内容如下:
 
 ```js
 var list = {
