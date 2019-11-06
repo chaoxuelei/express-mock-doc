@@ -129,10 +129,6 @@ module.exports = apiList;
 ```
 
 
-## 感谢
-[楼教主](https://github.com/52cik)
-
-
 [license-url]: https://opensource.org/licenses/MIT
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg
 [npm-url]: https://www.npmjs.com/package/express-mock-doc
